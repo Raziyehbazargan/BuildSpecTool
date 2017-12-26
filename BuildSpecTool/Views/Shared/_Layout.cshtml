@@ -9,23 +9,41 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
+            @Html.ActionLink("BuildTool", "Index", "Home", new { @class= "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Basic Information <span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="themes">
+                            <a class="dropdown-item" href="../default/">Default</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../cerulean/">Cerulean</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Attendee Type", "NewAttendeeType", "BasicInfo", new { @class= "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Mail", "NewMail", "BasicInfo", new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Client", "NewClient", "BasicInfo", new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Status", "NewStatus", "BasicInfo", new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Page", "NewPage", "BasicInfo", new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Team", "NewTeam", "BasicInfo", new { @class = "nav-link" })
+                    </li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
@@ -37,8 +55,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/scripts")
     @RenderSection("scripts", required: false)
 </body>
 </html>
