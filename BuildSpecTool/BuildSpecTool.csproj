@@ -196,8 +196,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ReferenceModels\AttendeeType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ReferenceModels\Client.cs" />
+    <Compile Include="Models\ReferenceModels\ContentSection.cs" />
+    <Compile Include="Models\ReferenceModels\Mail.cs" />
+    <Compile Include="Models\ReferenceModels\Page.cs" />
+    <Compile Include="Models\ReferenceModels\Role.cs" />
+    <Compile Include="Models\ReferenceModels\Status.cs" />
+    <Compile Include="Models\ReferenceModels\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
