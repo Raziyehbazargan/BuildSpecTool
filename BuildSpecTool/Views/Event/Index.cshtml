@@ -33,7 +33,7 @@
                 {
 
                     <tr>
-                        <td>@eve.Name</td>
+                        <td>@Html.ActionLink(eve.Name, "Edit", "Event" , new { id = eve.Id},null)</td>
                         <td>@(eve.IsMicrosoftEvent? (eve.IsMicrosoftInternal ? "Internal" : "External") : "No")</td>
                         <td>@eve.URL</td>
                         <td>@eve.Alias</td>

@@ -41,7 +41,7 @@ namespace BuildSpecTool.Controllers
                 Teams = teams
             };
 
-            return View(viewModel);
+            return View("EventForm", viewModel);
         }
 
         [HttpPost]
@@ -53,7 +53,25 @@ namespace BuildSpecTool.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View();
+            return View("EventForm");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var existEvent = _context.Event.SingleOrDefault(e => e.Id == id);
+            if (existEvent == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new EventViewModel
+            {
+                Event = existEvent,
+                Clients = _context.Ref_Client.ToList(),
+                Teams = _context.Ref_Team.ToList()
+            };
+
+            return View("EventForm", viewModel);
         }
     }
 }
