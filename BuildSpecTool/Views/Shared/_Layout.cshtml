@@ -6,47 +6,9 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
-    <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-        <div class="container">
-            @Html.ActionLink("BuildTool", "Index", "Home", new { @class= "navbar-brand" })
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Basic Information <span class="caret"></span></a>
-                        <div class="dropdown-menu" aria-labelledby="themes">
-                            <a class="dropdown-item" href="../default/">Default</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../cerulean/">Cerulean</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Attendee Type", "NewAttendeeType", "BasicInfo", new { @class= "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Mail", "NewMail", "BasicInfo", new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Client", "NewClient", "BasicInfo", new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Status", "NewStatus", "BasicInfo", new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Page", "NewPage", "BasicInfo", new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Team", "NewTeam", "BasicInfo", new { @class = "nav-link" })
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    @Html.Partial("_NavBar")
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -55,7 +17,8 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/scripts")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>

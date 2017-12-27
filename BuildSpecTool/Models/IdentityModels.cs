@@ -29,5 +29,7 @@ namespace BuildSpecTool.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<BuildSpecTool.Models.AttendeeType> AttendeeTypes { get; set; }
     }
 }
