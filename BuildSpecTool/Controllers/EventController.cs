@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+using BuildSpecTool.ViewModels;
 
 namespace BuildSpecTool.Controllers
 {
@@ -24,8 +26,28 @@ namespace BuildSpecTool.Controllers
         // GET: Event
         public ActionResult Index()
         {
-            var events = _context.Event.ToList();
+            var events = _context.Event.Include(e => e.Client).Include(e => e.Team).ToList();
             return View(events);
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            var clients = _context.Ref_Client.ToList();
+            var teams = _context.Ref_Team.ToList();
+            var viewModel = new EventViewModel
+            {
+                Clients = clients,
+                Teams = teams
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Event details)
+        {
+            return View();
         }
     }
 }
