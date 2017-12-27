@@ -47,8 +47,13 @@ namespace BuildSpecTool.Controllers
         [HttpPost]
         public ActionResult Create(EventViewModel details)
         {
-
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _context.Event.Add(details.Event);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }
