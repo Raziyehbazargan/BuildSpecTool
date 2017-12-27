@@ -200,8 +200,30 @@
     <Compile Include="Migrations\201712270043399_InitialModel.Designer.cs">
       <DependentUpon>201712270043399_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712270426530_add_Main_Models.cs" />
+    <Compile Include="Migrations\201712270426530_add_Main_Models.Designer.cs">
+      <DependentUpon>201712270426530_add_Main_Models.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712270432597_PopulateAttendeTypes.cs" />
+    <Compile Include="Migrations\201712270432597_PopulateAttendeTypes.Designer.cs">
+      <DependentUpon>201712270432597_PopulateAttendeTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712270438336_PopulateStatus.cs" />
+    <Compile Include="Migrations\201712270438336_PopulateStatus.Designer.cs">
+      <DependentUpon>201712270438336_PopulateStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712270500145_DeleteIsStaticColumn_PagesTable.cs" />
+    <Compile Include="Migrations\201712270500145_DeleteIsStaticColumn_PagesTable.Designer.cs">
+      <DependentUpon>201712270500145_DeleteIsStaticColumn_PagesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712270501299_PopulatePages.cs" />
+    <Compile Include="Migrations\201712270501299_PopulatePages.Designer.cs">
+      <DependentUpon>201712270501299_PopulatePages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\EventComponent.cs" />
     <Compile Include="Models\ReferenceModels\AttendeeType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -299,6 +321,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712270043399_InitialModel.resx">
       <DependentUpon>201712270043399_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712270426530_add_Main_Models.resx">
+      <DependentUpon>201712270426530_add_Main_Models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712270432597_PopulateAttendeTypes.resx">
+      <DependentUpon>201712270432597_PopulateAttendeTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712270438336_PopulateStatus.resx">
+      <DependentUpon>201712270438336_PopulateStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712270500145_DeleteIsStaticColumn_PagesTable.resx">
+      <DependentUpon>201712270500145_DeleteIsStaticColumn_PagesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712270501299_PopulatePages.resx">
+      <DependentUpon>201712270501299_PopulatePages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

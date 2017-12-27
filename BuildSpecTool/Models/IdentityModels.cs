@@ -31,14 +31,16 @@ namespace BuildSpecTool.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<AttendeeType> Ref_AttendeeTypes { get; set; }
-        public DbSet<Client> Ref_Clients { get; set; }
+        public DbSet<Event> Event { get; set; }
+        public DbSet<EventComponent> EventComponent { get; set; }
+        public DbSet<AttendeeType> Ref_AttendeeType { get; set; }
+        public DbSet<Client> Ref_Client { get; set; }
         public DbSet<ContentSection> Ref_ContentSections { get; set; }
-        public DbSet<Mail> Ref_Mails { get; set; }
-        public DbSet<Page> Ref_Pages { get; set; }
+        public DbSet<Mail> Ref_Mail { get; set; }
+        public DbSet<Page> Ref_Page { get; set; }
         public DbSet<Status> Ref_Status { get; set; }
-        public DbSet<Team> Ref_Teams { get; set; }
-        public DbSet<Role> Ref_Roles { get; set; }
+        public DbSet<Team> Ref_Team { get; set; }
+        public DbSet<Role> Ref_Role { get; set; }
 
 
 
