@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BuildSpecTool.Models.ReferenceModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -45,6 +46,8 @@ namespace BuildSpecTool.Models
 
         public int ClientId { get; set; } //foreign key
 
-        public EventComponent EventComponent { get; set; }
+        public Team Team { get; set; }
+
+        public Client Client { get; set; }
     }
 }

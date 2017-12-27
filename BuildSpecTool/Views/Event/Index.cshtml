@@ -1,0 +1,11 @@
+﻿@model List<BuildSpecTool.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach(var eve in Model) {
+    <p>@eve.Name</p>
+}
