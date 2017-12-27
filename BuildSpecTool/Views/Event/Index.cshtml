@@ -15,7 +15,6 @@
                     <th>Microsoft Event</th>
                     <th>URL</th>
                     <th>Alias</th>
-                    <th>Estimated Attendance</th>
                     <th>Registration Lead</th>
                     <th>Technical Lead</th>
                     <th>EventDate</th>
@@ -25,7 +24,6 @@
                     <th></th>
                     <th>Team</th>
                     <th>Client</th>
-                    <th>Phone</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,7 +35,6 @@
                         <td>@(eve.IsMicrosoftEvent? (eve.IsMicrosoftInternal ? "Internal" : "External") : "No")</td>
                         <td>@eve.URL</td>
                         <td>@eve.Alias</td>
-                        <td>@eve.EstimatedAttendance</td>
                         <td>@eve.Registration_Lead</td>
                         <td>@eve.Technical_Lead</td>
                         <td>@eve.Actual_EventDate</td>
@@ -47,7 +44,6 @@
                         <td>@eve.ClientEditDueDate</td>
                         <td>@eve.Team.Name</td>
                         <td>@eve.Client.Name</td>
-                        <td>@eve.Phone</td>
                     </tr>
                 }
             </tbody>

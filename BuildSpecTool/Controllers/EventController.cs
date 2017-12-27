@@ -45,15 +45,27 @@ namespace BuildSpecTool.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(EventViewModel details)
+        public ActionResult Save(EventViewModel details)
         {
-            if (ModelState.IsValid)
+
+            if (details.Event.Id == 0)
             {
                 _context.Event.Add(details.Event);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
             }
-            return View("EventForm");
+            else
+            {
+                var eventInDB = _context.Event.Single(e => e.Id == details.Event.Id);
+                TryUpdateModel(eventInDB);
+            }
+
+            //if (!ModelState.IsValid)
+            //{
+            //    var errors = ModelState.Where(e => e.Value.Errors.Count > 0).ToArray();
+            //    return View("Index");
+            //}
+
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Event");
         }
 
         public ActionResult Edit(int id)
