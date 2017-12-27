@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\ReferenceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -220,6 +221,26 @@
     <Compile Include="Migrations\201712270501299_PopulatePages.Designer.cs">
       <DependentUpon>201712270501299_PopulatePages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712270512546_UpdateEventModel.cs" />
+    <Compile Include="Migrations\201712270512546_UpdateEventModel.Designer.cs">
+      <DependentUpon>201712270512546_UpdateEventModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712270516082_PopulateTeams.cs" />
+    <Compile Include="Migrations\201712270516082_PopulateTeams.Designer.cs">
+      <DependentUpon>201712270516082_PopulateTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712270520363_PopulateClient.cs" />
+    <Compile Include="Migrations\201712270520363_PopulateClient.Designer.cs">
+      <DependentUpon>201712270520363_PopulateClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712271705587_RemoveComponent_Event.cs" />
+    <Compile Include="Migrations\201712271705587_RemoveComponent_Event.Designer.cs">
+      <DependentUpon>201712271705587_RemoveComponent_Event.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712271913505_addDataAnnotationsToEventModel.cs" />
+    <Compile Include="Migrations\201712271913505_addDataAnnotationsToEventModel.Designer.cs">
+      <DependentUpon>201712271913505_addDataAnnotationsToEventModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
@@ -236,6 +257,7 @@
     <Compile Include="Models\ReferenceModels\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\EventViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -299,10 +321,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Reference\AttendeeType.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Views\BasicInfo\" />
   </ItemGroup>
   <ItemGroup>
@@ -336,6 +359,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712270501299_PopulatePages.resx">
       <DependentUpon>201712270501299_PopulatePages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712270512546_UpdateEventModel.resx">
+      <DependentUpon>201712270512546_UpdateEventModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712270516082_PopulateTeams.resx">
+      <DependentUpon>201712270516082_PopulateTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712270520363_PopulateClient.resx">
+      <DependentUpon>201712270520363_PopulateClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712271705587_RemoveComponent_Event.resx">
+      <DependentUpon>201712271705587_RemoveComponent_Event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712271913505_addDataAnnotationsToEventModel.resx">
+      <DependentUpon>201712271913505_addDataAnnotationsToEventModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
