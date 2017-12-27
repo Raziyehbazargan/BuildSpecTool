@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using BuildSpecTool.Models.ReferenceModels;
 
 namespace BuildSpecTool.Models
 {
@@ -30,6 +31,16 @@ namespace BuildSpecTool.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<BuildSpecTool.Models.AttendeeType> AttendeeTypes { get; set; }
+        public DbSet<AttendeeType> Ref_AttendeeTypes { get; set; }
+        public DbSet<Client> Ref_Clients { get; set; }
+        public DbSet<ContentSection> Ref_ContentSections { get; set; }
+        public DbSet<Mail> Ref_Mails { get; set; }
+        public DbSet<Page> Ref_Pages { get; set; }
+        public DbSet<Status> Ref_Status { get; set; }
+        public DbSet<Team> Ref_Teams { get; set; }
+        public DbSet<Role> Ref_Roles { get; set; }
+
+
+
     }
 }
