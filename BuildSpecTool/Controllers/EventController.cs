@@ -45,9 +45,10 @@ namespace BuildSpecTool.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Event details)
+        public ActionResult Create(EventViewModel details)
         {
-            return View();
+
+            return RedirectToAction("Index");
         }
     }
 }
