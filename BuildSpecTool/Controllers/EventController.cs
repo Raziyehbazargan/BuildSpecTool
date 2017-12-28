@@ -85,5 +85,6 @@ namespace BuildSpecTool.Controllers
 
             return View("EventForm", viewModel);
         }
+
     }
 }

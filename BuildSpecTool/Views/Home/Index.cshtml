@@ -12,12 +12,20 @@
 
         @Html.Partial("_SearchbarPartial")
 
-        <div class="list-group">
-            @foreach (var item in Model)
+        <ul class="list-group">
+            @{
+                foreach (var item in Model)
                 {
-                @Html.ActionLink(@item.Name, "Edit", "Event", new { id = item.Id }, new { @class = "list-group-item list-group-item-action disabled" })
+                    <li class="list-group-item">
+                        <a href="~/Event/Edit/@item.Id">@item.Name</a>
+                        <a class="pull-right"><span class="glyphicon glyphicon-star" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
+                        <a class="pull-right"><span class="glyphicon glyphicon-cloud-download" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
+                        <a class="pull-right"><span class="glyphicon glyphicon-envelope" style="font-size:20px;padding:0 10px;cursor:pointer;"></span> </a>
+                        <a href="~/Component/Index/@item.Id" class="pull-right"><span class="glyphicon glyphicon-tasks" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
+                    </li>
                 }
-        </div>
+            }
+        </ul>
 
     </div>
 
