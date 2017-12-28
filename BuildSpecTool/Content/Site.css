@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    margin-top: 30px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -16,23 +17,6 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
 .space-top-30 {
     margin-top:30px;
-}
-
-#exTab3 .nav-pills > li > a {
-    border-radius: 4px 4px 0 0;
-}
-
-#exTab3 .tab-content {
-    color: white;
-    background-color: #428bca;
-    padding: 5px 15px;
 }
