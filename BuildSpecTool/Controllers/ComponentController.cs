@@ -1,10 +1,9 @@
 ﻿using BuildSpecTool.Models;
 using BuildSpecTool.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+
 
 namespace BuildSpecTool.Controllers
 {
@@ -24,36 +23,30 @@ namespace BuildSpecTool.Controllers
         // GET: Component
         public ActionResult Index(int id)
         {
-            var eventComponents = _context.EventComponent.FirstOrDefault(c => c.EventId == id);
-            var currentEvent = _context.Event.FirstOrDefault(e => e.Id == id);
-
-            var viewModel = new ComponentViewModel
+            var viewModel = new ManagementViewModel
             {
-                Event = currentEvent,
-                Component = eventComponents
+                Component = _context.EventComponent.Include(e => e.Event).FirstOrDefault(c => c.EventId == id)
             };
-
             return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult Save(ComponentViewModel details)
+        public ActionResult Save(Component details)
         {
+            var components = _context.EventComponent.Where(c => c.EventId == details.Event.Id).FirstOrDefault();
 
-            var eventComponents = _context.EventComponent.Where(c => c.EventId == details.Event.Id).FirstOrDefault();
-
-            if (eventComponents == null)
+            if (components == null)
             {
-                details.Component.EventId = details.Event.Id;
-                _context.EventComponent.Add(details.Component);
+                details.EventId = details.Event.Id;
+                _context.EventComponent.Add(details);
             }
             else
             {
-                TryUpdateModel(eventComponents);
+                TryUpdateModel(components);
             }
 
             _context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return View("Index");
         }
     }
 }

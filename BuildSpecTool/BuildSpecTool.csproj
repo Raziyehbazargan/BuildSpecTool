@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ReferenceControllers\AttendeTypeController.cs" />
     <Compile Include="Controllers\ComponentController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\ReferenceController.cs" />
@@ -242,24 +243,28 @@
     <Compile Include="Migrations\201712271913505_addDataAnnotationsToEventModel.Designer.cs">
       <DependentUpon>201712271913505_addDataAnnotationsToEventModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712290020532_addEventToComponent.cs" />
+    <Compile Include="Migrations\201712290020532_addEventToComponent.Designer.cs">
+      <DependentUpon>201712290020532_addEventToComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
-    <Compile Include="Models\EventComponent.cs" />
+    <Compile Include="Models\Component.cs" />
     <Compile Include="Models\ReferenceModels\AttendeeType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ReferenceModels\Client.cs" />
     <Compile Include="Models\ReferenceModels\ContentSection.cs" />
     <Compile Include="Models\ReferenceModels\Mail.cs" />
-    <Compile Include="Models\ReferenceModels\Page.cs" />
+    <Compile Include="Models\ReferenceModels\SitePage.cs" />
     <Compile Include="Models\ReferenceModels\Role.cs" />
     <Compile Include="Models\ReferenceModels\Status.cs" />
     <Compile Include="Models\ReferenceModels\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\ComponentViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
+    <Compile Include="ViewModels\ManagementViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -329,6 +334,9 @@
     <Content Include="Views\Home\_FavoritePartial.cshtml" />
     <Content Include="Views\Home\_SearchbarPartial.cshtml" />
     <Content Include="Views\Component\Index.cshtml" />
+    <Content Include="Views\Component\_SiteComponents.cshtml" />
+    <Content Include="Views\Component\_MenuPartial.cshtml" />
+    <Content Include="Views\Component\_AttendeeType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -380,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712271913505_addDataAnnotationsToEventModel.resx">
       <DependentUpon>201712271913505_addDataAnnotationsToEventModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712290020532_addEventToComponent.resx">
+      <DependentUpon>201712290020532_addEventToComponent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

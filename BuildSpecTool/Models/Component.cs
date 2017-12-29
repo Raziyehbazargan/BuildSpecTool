@@ -5,11 +5,12 @@ using System.Web;
 
 namespace BuildSpecTool.Models
 {
-    public class EventComponent
+    public class Component
     {
         public int Id { get; set; }
 
         public int EventId { get; set; } //foreign key
+        public Event Event { get; set; }
 
         public bool InvitationUpload { get; set; }
 

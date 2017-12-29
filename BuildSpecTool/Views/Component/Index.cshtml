@@ -1,168 +1,47 @@
-﻿@model BuildSpecTool.ViewModels.ComponentViewModel
+﻿@model BuildSpecTool.ViewModels.ManagementViewModel
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-@using (Html.BeginForm("Save","component")) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>EventComponent</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Event.Id)
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.InvitationUpload, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.InvitationUpload)
-                    @Html.ValidationMessageFor(model => model.Component.InvitationUpload, "", new { @class = "text-danger" })
-                </div>
+<div class="row">
+    @Html.Partial("_MenuPartial")
+
+    <div class="col-sm-9 col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Dashboard</h3>
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.DynamicAgenda, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.DynamicAgenda)
-                    @Html.ValidationMessageFor(model => model.Component.DynamicAgenda, "", new { @class = "text-danger" })
+            <div class="panel-body" id="mainSection">
+                 <div id="componentView">
+                     @Html.Partial("_SiteComponents", Model.Component)
+                 </div>
+                <div id="attendeeTypeView">
+                    @Html.Partial("_SiteComponents", Model.Component)
                 </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.RSVPCodes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.RSVPCodes)
-                    @Html.ValidationMessageFor(model => model.Component.RSVPCodes, "", new { @class = "text-danger" })
+                <div id="statusView">
                 </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.Session, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.Session)
-                    @Html.ValidationMessageFor(model => model.Component.Session, "", new { @class = "text-danger" })
+                <div id="mailView">
                 </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.HasHotel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.HasHotel)
-                    @Html.ValidationMessageFor(model => model.Component.HasHotel, "", new { @class = "text-danger" })
+                <div id="regPageView">
                 </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.ApprovalTool, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.ApprovalTool)
-                    @Html.ValidationMessageFor(model => model.Component.ApprovalTool, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.OnsiteTool, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.OnsiteTool)
-                    @Html.ValidationMessageFor(model => model.Component.OnsiteTool, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.OverallEvals, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.OverallEvals)
-                    @Html.ValidationMessageFor(model => model.Component.OverallEvals, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.SessionEvals, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.SessionEvals)
-                    @Html.ValidationMessageFor(model => model.Component.SessionEvals, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.Search_Engine, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.Search_Engine)
-                    @Html.ValidationMessageFor(model => model.Component.Search_Engine, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.SpeakerInformation, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.SpeakerInformation)
-                    @Html.ValidationMessageFor(model => model.Component.SpeakerInformation, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.AgendaFilter, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.AgendaFilter)
-                    @Html.ValidationMessageFor(model => model.Component.AgendaFilter, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.AgendaSessionsSignup, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.AgendaSessionsSignup)
-                    @Html.ValidationMessageFor(model => model.Component.AgendaSessionsSignup, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Component.Progress_bar, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Component.Progress_bar)
-                    @Html.ValidationMessageFor(model => model.Component.Progress_bar, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index", "Home")
 </div>
+
+
+
+
+@section scripts {
+    <script type="text/javascript">
+        $('.list-group-item').on('click', function () {
+            $('.list-group-item').removeClass('active');
+            $(this).addClass('active');
+
+
+        });
+    </script>
+    }
