@@ -304,6 +304,7 @@
     <Compile Include="Views\StatusController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-switch.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -311,6 +312,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\site.css" />
+    <Content Include="Scripts\bootstrap-switch.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -371,7 +373,7 @@
     <Content Include="Views\Home\_FavoritePartial.cshtml" />
     <Content Include="Views\Home\_SearchbarPartial.cshtml" />
     <Content Include="Views\SiteManagement\Index.cshtml" />
-    <Content Include="Views\SiteManagement\_SiteComponents.cshtml" />
+    <Content Include="Views\SiteManagement\_Components.cshtml" />
     <Content Include="Views\SiteManagement\_MenuPartial.cshtml" />
     <Content Include="Views\SiteManagement\_AttendeeType.cshtml" />
     <Content Include="Views\SiteManagement\_AttendeeTypeList.cshtml" />
