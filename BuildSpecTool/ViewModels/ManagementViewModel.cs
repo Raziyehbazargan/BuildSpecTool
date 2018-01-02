@@ -10,17 +10,22 @@ namespace BuildSpecTool.ViewModels
     public class ManagementViewModel
     {
         public Component Component { get; set; }
-        public AttendeeTypeViewModel AttendeeTypeViewModel { get; set; }
-        public Status Status { get; set; }
-        public Mail Mail { get; set; }
+
+        public EventAttendeeType EventAttendeeType { get; set; }
+
+        public EventStatus EventStatus { get; set; }
+
+        public EventPage EventPage { get; set; }
+
+        public EventMail EventMail { get; set; }
 
         public ManagementViewModel()
         {
             Component = new Component();
-            AttendeeTypeViewModel = new AttendeeTypeViewModel();
-            Status = new Status();
-            Mail = new Mail();
+            EventAttendeeType = new EventAttendeeType();
+            EventStatus = new EventStatus();
+            EventPage = new EventPage();
+            EventMail = new EventMail();
         }
- 
     }
 }

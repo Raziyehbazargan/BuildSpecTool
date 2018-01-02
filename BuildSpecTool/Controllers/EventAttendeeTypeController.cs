@@ -1,4 +1,5 @@
 ﻿using BuildSpecTool.Models;
+using BuildSpecTool.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,11 @@ namespace BuildSpecTool.Controllers
             _context.Dispose();
         }
 
-        // GET: EventAttendeeType
-        public ActionResult Index()
+        public ActionResult Save(EventAttendeeType details)
         {
-            var attendeTypes = _context.Ref_AttendeeType.ToList();
-            return View(attendeTypes);
+            _context.AttendeeType.Add(details);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "SiteManagement", new { id = details.EventId });
         }
     }
 }

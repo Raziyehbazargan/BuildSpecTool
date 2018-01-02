@@ -42,7 +42,8 @@ namespace BuildSpecTool.Models
         public DbSet<Team> Ref_Team { get; set; }
         public DbSet<Role> Ref_Role { get; set; }
         public DbSet<EventAttendeeType> AttendeeType { get; set; }
-
-
+        public DbSet<EventStatus> EventStatus { get; set; }
+        public DbSet<EventPage> EventPages { get; set; }
+        public DbSet<EventMail> EventMails { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+
 <table class="table table-bordered table-responsive">
     <thead>
         <tr>
@@ -7,6 +8,7 @@
             <th>RSVP Code</th>
             <th>Capacity</th>
             <th>Description</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,7 +21,10 @@
                 <td>@item.HasRSVP</td>
                 <td>@item.Capacity</td>
                 <td>@item.Description</td>
-
+                <td>
+                    <button>Delete</button>
+                    <button>Edit</button>
+                </td>
             </tr>
         }
     </tbody>

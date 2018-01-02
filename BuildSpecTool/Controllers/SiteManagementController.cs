@@ -29,33 +29,31 @@ namespace BuildSpecTool.Controllers
                 Component = component ?? new Component
                 {
                     EventId = id
-                },          
-                AttendeeTypeViewModel = new AttendeeTypeViewModel {
-                    AttendeeTypes = _context.Ref_AttendeeType.ToList(),
-                    EventAttendeeTypes = _context.AttendeeType.Where(e => e.EventId == id)
+                },
+                EventAttendeeType = new EventAttendeeType
+                {
+                    EventId = id,
+                    AttendeeTypes = _context.Ref_AttendeeType.ToList()
+                },
+                EventStatus = new Models.ReferenceModels.EventStatus
+                {
+                    EventId = id,
+                    StatusList = _context.Ref_Status.ToList()
+                },
+                EventPage = new EventPage
+                {
+                    EventId = id,
+                    SitePageList = _context.Ref_Page.ToList()
+
+                },
+                EventMail = new EventMail
+                {
+                    EventId = id,
+                    MailList = _context.Ref_Mail.ToList()
                 }
             };
 
             return View(viewModel);
         }
-
-        //[HttpPost]
-        //public ActionResult SaveComponent(Component details)
-        //{
-        //    var components = _context.EventComponent.Where(c => c.EventId == details.Event.Id).FirstOrDefault();
-
-        //    if (components == null)
-        //    {
-        //        details.EventId = details.Event.Id;
-        //        _context.EventComponent.Add(details);
-        //    }
-        //    else
-        //    {
-        //        TryUpdateModel(components);
-        //    }
-
-        //    _context.SaveChanges();
-        //    return View("Index", "SiteManagement");
-        //}
     }
 }
