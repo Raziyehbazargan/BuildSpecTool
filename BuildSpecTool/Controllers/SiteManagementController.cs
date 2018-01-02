@@ -34,6 +34,17 @@ namespace BuildSpecTool.Controllers
                 {
                     EventId = id,
                     AttendeeTypes = _context.Ref_AttendeeType.ToList()
+                },
+                EventStatus = new Models.ReferenceModels.EventStatus
+                {
+                    EventId = id,
+                    StatusList = _context.Ref_Status.ToList()
+                },
+                EventPage = new EventPage
+                {
+                    EventId = id,
+                    SitePageList = _context.Ref_Page.ToList()
+
                 }
             };
 

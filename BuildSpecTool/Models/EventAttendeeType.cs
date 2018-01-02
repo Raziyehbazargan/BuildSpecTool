@@ -11,8 +11,6 @@ namespace BuildSpecTool.Models
 
         public int EventId { get; set; } //foreign key
 
-        public Event Event { get; set; }
-
         public byte AttendeeTypeId { get; set; } //foreign key
 
         public IEnumerable<AttendeeType> AttendeeTypes { get; set; }
