@@ -45,6 +45,11 @@ namespace BuildSpecTool.Controllers
                     EventId = id,
                     SitePageList = _context.Ref_Page.ToList()
 
+                },
+                EventMail = new EventMail
+                {
+                    EventId = id,
+                    MailList = _context.Ref_Mail.ToList()
                 }
             };
 

@@ -17,7 +17,7 @@ namespace BuildSpecTool.ViewModels
 
         public EventPage EventPage { get; set; }
 
-        public Mail Mail { get; set; }
+        public EventMail EventMail { get; set; }
 
         public ManagementViewModel()
         {
@@ -25,7 +25,7 @@ namespace BuildSpecTool.ViewModels
             EventAttendeeType = new EventAttendeeType();
             EventStatus = new EventStatus();
             EventPage = new EventPage();
-            Mail = new Mail();
+            EventMail = new EventMail();
         }
     }
 }

@@ -44,5 +44,6 @@ namespace BuildSpecTool.Models
         public DbSet<EventAttendeeType> AttendeeType { get; set; }
         public DbSet<EventStatus> EventStatus { get; set; }
         public DbSet<EventPage> EventPages { get; set; }
+        public DbSet<EventMail> EventMails { get; set; }
     }
 }

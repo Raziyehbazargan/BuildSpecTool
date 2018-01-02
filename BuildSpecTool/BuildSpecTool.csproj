@@ -192,6 +192,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ComponentController.cs" />
     <Compile Include="Controllers\EventAttendeeTypeController.cs" />
+    <Compile Include="Controllers\EventMailController.cs" />
     <Compile Include="Controllers\EventPageController.cs" />
     <Compile Include="Controllers\ReferenceControllers\AttendeTypeController.cs" />
     <Compile Include="Controllers\SiteManagementController.cs" />
@@ -266,11 +267,24 @@
     <Compile Include="Migrations\201801020432369_addeventPageModel.Designer.cs">
       <DependentUpon>201801020432369_addeventPageModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801021756220_addEventMailModel.cs" />
+    <Compile Include="Migrations\201801021756220_addEventMailModel.Designer.cs">
+      <DependentUpon>201801021756220_addEventMailModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801021758456_addEventMailModel1.cs" />
+    <Compile Include="Migrations\201801021758456_addEventMailModel1.Designer.cs">
+      <DependentUpon>201801021758456_addEventMailModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801021835218_PopulateMail.cs" />
+    <Compile Include="Migrations\201801021835218_PopulateMail.Designer.cs">
+      <DependentUpon>201801021835218_PopulateMail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Component.cs" />
     <Compile Include="Models\EventAttendeeType.cs" />
+    <Compile Include="Models\EventMail.cs" />
     <Compile Include="Models\EventPage.cs" />
     <Compile Include="Models\ReferenceModels\AttendeeType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -364,12 +378,14 @@
     <Content Include="Views\SiteManagement\_Status.cshtml" />
     <Content Include="Views\SiteManagement\_EventPage.cshtml" />
     <Content Include="Views\SiteManagement\_RegistrationFlow.cshtml" />
+    <Content Include="Views\SiteManagement\_EventMail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BasicInfo\" />
     <Folder Include="Views\Component\" />
     <Folder Include="Views\EventAttendeeType\" />
+    <Folder Include="Views\EventMail\" />
     <Folder Include="Views\EventPage\" />
   </ItemGroup>
   <ItemGroup>
@@ -433,6 +449,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801020432369_addeventPageModel.resx">
       <DependentUpon>201801020432369_addeventPageModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801021756220_addEventMailModel.resx">
+      <DependentUpon>201801021756220_addEventMailModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801021758456_addEventMailModel1.resx">
+      <DependentUpon>201801021758456_addEventMailModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801021835218_PopulateMail.resx">
+      <DependentUpon>201801021835218_PopulateMail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
