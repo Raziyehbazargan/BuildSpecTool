@@ -1,9 +1,9 @@
-﻿@model BuildSpecTool.ViewModels.ManagementViewModel
+﻿
+@model BuildSpecTool.ViewModels.ManagementViewModel
 
 @{
     ViewBag.Title = "Index";
 }
-
 
 <div class="row">
     @Html.Partial("_MenuPartial")
@@ -18,7 +18,7 @@
                      @Html.Partial("_SiteComponents", Model.Component)
                  </div>
                 <div id="attendeeTypeView">
-                    @Html.Partial("_SiteComponents", Model.Component)
+                   @* @Html.Partial("_AttendeeType", Model.AttendeeTypeViewModel)*@
                 </div>
                 <div id="statusView">
                 </div>

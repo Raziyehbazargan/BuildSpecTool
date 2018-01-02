@@ -10,7 +10,6 @@ namespace BuildSpecTool.Models
         public int Id { get; set; }
 
         public int EventId { get; set; } //foreign key
-        public Event Event { get; set; }
 
         public bool InvitationUpload { get; set; }
 

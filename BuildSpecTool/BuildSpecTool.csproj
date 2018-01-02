@@ -190,8 +190,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ReferenceControllers\AttendeTypeController.cs" />
     <Compile Include="Controllers\ComponentController.cs" />
+    <Compile Include="Controllers\EventAttendeeTypeController.cs" />
+    <Compile Include="Controllers\ReferenceControllers\AttendeTypeController.cs" />
+    <Compile Include="Controllers\SiteManagementController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\ReferenceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -247,10 +249,19 @@
     <Compile Include="Migrations\201712290020532_addEventToComponent.Designer.cs">
       <DependentUpon>201712290020532_addEventToComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712290122507_addEventAttendeeTypeModel.cs" />
+    <Compile Include="Migrations\201712290122507_addEventAttendeeTypeModel.Designer.cs">
+      <DependentUpon>201712290122507_addEventAttendeeTypeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712290125046_addEventAttendeeTypeModel1.cs" />
+    <Compile Include="Migrations\201712290125046_addEventAttendeeTypeModel1.Designer.cs">
+      <DependentUpon>201712290125046_addEventAttendeeTypeModel1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Component.cs" />
+    <Compile Include="Models\EventAttendeeType.cs" />
     <Compile Include="Models\ReferenceModels\AttendeeType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -263,6 +274,7 @@
     <Compile Include="Models\ReferenceModels\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AttendeeTypeViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
     <Compile Include="ViewModels\ManagementViewModel.cs" />
   </ItemGroup>
@@ -333,14 +345,17 @@
     <Content Include="Views\Home\_AbstractPartial.cshtml" />
     <Content Include="Views\Home\_FavoritePartial.cshtml" />
     <Content Include="Views\Home\_SearchbarPartial.cshtml" />
-    <Content Include="Views\Component\Index.cshtml" />
-    <Content Include="Views\Component\_SiteComponents.cshtml" />
-    <Content Include="Views\Component\_MenuPartial.cshtml" />
-    <Content Include="Views\Component\_AttendeeType.cshtml" />
+    <Content Include="Views\SiteManagement\Index.cshtml" />
+    <Content Include="Views\SiteManagement\_SiteComponents.cshtml" />
+    <Content Include="Views\SiteManagement\_MenuPartial.cshtml" />
+    <Content Include="Views\SiteManagement\_AttendeeType.cshtml" />
+    <Content Include="Views\SiteManagement\_AttendeeTypeList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BasicInfo\" />
+    <Folder Include="Views\Component\" />
+    <Folder Include="Views\EventAttendeeType\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -391,6 +406,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712290020532_addEventToComponent.resx">
       <DependentUpon>201712290020532_addEventToComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712290122507_addEventAttendeeTypeModel.resx">
+      <DependentUpon>201712290122507_addEventAttendeeTypeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712290125046_addEventAttendeeTypeModel1.resx">
+      <DependentUpon>201712290125046_addEventAttendeeTypeModel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

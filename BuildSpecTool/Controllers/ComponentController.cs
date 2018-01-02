@@ -1,12 +1,13 @@
 ﻿using BuildSpecTool.Models;
-using BuildSpecTool.ViewModels;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
-using System.Data.Entity;
-
 
 namespace BuildSpecTool.Controllers
 {
+
     public class ComponentController : Controller
     {
         private ApplicationDbContext _context;
@@ -14,30 +15,24 @@ namespace BuildSpecTool.Controllers
         {
             _context = new ApplicationDbContext();
         }
-
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
         }
 
         // GET: Component
-        public ActionResult Index(int id)
+        public ActionResult Index()
         {
-            var viewModel = new ManagementViewModel
-            {
-                Component = _context.EventComponent.Include(e => e.Event).FirstOrDefault(c => c.EventId == id)
-            };
-            return View(viewModel);
+            return View();
         }
 
         [HttpPost]
         public ActionResult Save(Component details)
         {
-            var components = _context.EventComponent.Where(c => c.EventId == details.Event.Id).FirstOrDefault();
+            var components = _context.EventComponent.Where(c => c.EventId == details.EventId).FirstOrDefault();
 
             if (components == null)
             {
-                details.EventId = details.Event.Id;
                 _context.EventComponent.Add(details);
             }
             else
@@ -46,7 +41,8 @@ namespace BuildSpecTool.Controllers
             }
 
             _context.SaveChanges();
-            return View("Index");
+            return RedirectToAction("Index","SiteManagement", new { id = details.EventId });
+
         }
     }
 }

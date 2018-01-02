@@ -17,11 +17,12 @@
                 foreach (var item in Model)
                 {
                     <li class="list-group-item">
+                        <a class="pull-left"><span class="glyphicon glyphicon-paperclip" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
                         <a href="~/Event/Edit/@item.Id">@item.Name</a>
                         <a class="pull-right"><span class="glyphicon glyphicon-star" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
                         <a class="pull-right"><span class="glyphicon glyphicon-cloud-download" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
                         <a class="pull-right"><span class="glyphicon glyphicon-envelope" style="font-size:20px;padding:0 10px;cursor:pointer;"></span> </a>
-                        <a href="~/Component/Index/@item.Id" class="pull-right"><span class="glyphicon glyphicon-tasks" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
+                        <a href="~/SiteManagement/Index/@item.Id" class="pull-right"><span class="glyphicon glyphicon-tasks" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
                     </li>
                 }
             }
