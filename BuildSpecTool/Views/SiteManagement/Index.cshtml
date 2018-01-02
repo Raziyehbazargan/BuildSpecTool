@@ -15,7 +15,7 @@
             </div>
             <div class="panel-body" id="mainSection">
                  <div class="menu" id="componentView">
-                     @Html.Partial("_SiteComponents", Model.Component)
+                     @Html.Partial("_Components", Model.Component)
                  </div>
                 <div class="menu" id="attendeeTypeView" style="display:none;">
                     @Html.Partial("_AttendeeType", Model.EventAttendeeType)
@@ -42,7 +42,16 @@
 @section scripts {
     <script type="text/javascript">
         $(document).ready(function () {
-            console.log('yes');
+            var options = {
+                onText: "Yes",
+                onColor: 'success',
+                offColor: 'default',
+                offText: "No",
+                animate: true,
+            };
+            $("input[class='check-box']").bootstrapSwitch(options);
+
+
             var navListItems = $('ul.setup-panel li a'),
                 allWells = $('.setup-content');
 
