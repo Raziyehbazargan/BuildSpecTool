@@ -1,0 +1,47 @@
+﻿
+@model BuildSpecTool.ViewModels.ManagementViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    @Html.Partial("_MenuPartial")
+
+    <div class="col-sm-9 col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Dashboard</h3>
+            </div>
+            <div class="panel-body" id="mainSection">
+                 <div id="componentView">
+                     @Html.Partial("_SiteComponents", Model.Component)
+                 </div>
+                <div id="attendeeTypeView">
+                   @* @Html.Partial("_AttendeeType", Model.AttendeeTypeViewModel)*@
+                </div>
+                <div id="statusView">
+                </div>
+                <div id="mailView">
+                </div>
+                <div id="regPageView">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+@section scripts {
+    <script type="text/javascript">
+        $('.list-group-item').on('click', function () {
+            $('.list-group-item').removeClass('active');
+            $(this).addClass('active');
+
+
+        });
+    </script>
+    }

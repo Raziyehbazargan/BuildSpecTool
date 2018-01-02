@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BuildSpecTool.Models.ReferenceModels
 {
-    public class Page
+    public class SitePage
     {
         public byte Id { get; set; }
 

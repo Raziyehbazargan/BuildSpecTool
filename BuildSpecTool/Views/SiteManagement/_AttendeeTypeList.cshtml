@@ -1,0 +1,27 @@
+﻿
+<table class="table table-bordered table-responsive">
+    <thead>
+        <tr>
+            <th>Attendee Type</th>
+            <th>Invited</th>
+            <th>RSVP Code</th>
+            <th>Capacity</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.EventAttendeeTypes)
+        {
+
+            <tr>
+                <td>@item.AttendeeType.Name</td>
+                <td>@item.Invited</td>
+                <td>@item.HasRSVP</td>
+                <td>@item.Capacity</td>
+                <td>@item.Description</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -32,16 +32,16 @@ namespace BuildSpecTool.Models
         }
 
         public DbSet<Event> Event { get; set; }
-        public DbSet<EventComponent> EventComponent { get; set; }
+        public DbSet<Component> EventComponent { get; set; }
         public DbSet<AttendeeType> Ref_AttendeeType { get; set; }
         public DbSet<Client> Ref_Client { get; set; }
         public DbSet<ContentSection> Ref_ContentSections { get; set; }
         public DbSet<Mail> Ref_Mail { get; set; }
-        public DbSet<Page> Ref_Page { get; set; }
+        public DbSet<SitePage> Ref_Page { get; set; }
         public DbSet<Status> Ref_Status { get; set; }
         public DbSet<Team> Ref_Team { get; set; }
         public DbSet<Role> Ref_Role { get; set; }
-
+        public DbSet<EventAttendeeType> AttendeeType { get; set; }
 
 
     }

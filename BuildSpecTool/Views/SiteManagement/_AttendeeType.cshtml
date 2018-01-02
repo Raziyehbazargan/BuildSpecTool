@@ -1,0 +1,59 @@
+﻿
+@model BuildSpecTool.ViewModels.AttendeeTypeViewModel
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>AttendeeType</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.EventAttendeeType.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AttendeeTypes, "Attendee Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EventAttendeeType.AttendeeTypeId, new SelectList(Model.AttendeeTypes, "Id", "Name"), "", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EventAttendeeType.AttendeeTypeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventAttendeeType.Invited, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.EventAttendeeType.Invited)
+                    @Html.ValidationMessageFor(model => model.EventAttendeeType.Invited, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventAttendeeType.HasRSVP, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.EventAttendeeType.HasRSVP)
+                    @Html.ValidationMessageFor(model => model.EventAttendeeType.HasRSVP, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventAttendeeType.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EventAttendeeType.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EventAttendeeType.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    <hr/>
+
+    @Html.Partial("_AttendeeTypeList")
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

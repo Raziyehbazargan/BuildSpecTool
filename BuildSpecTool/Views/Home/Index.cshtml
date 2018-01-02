@@ -1,3 +1,34 @@
-﻿@{
+﻿@model List<BuildSpecTool.Models.Event>
+
+@{
     ViewBag.Title = "Home Page";
 }
+
+
+@Html.Partial("_AbstractPartial")
+
+<div class="row">
+    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">   
+
+        @Html.Partial("_SearchbarPartial")
+
+        <ul class="list-group">
+            @{
+                foreach (var item in Model)
+                {
+                    <li class="list-group-item">
+                        <a class="pull-left"><span class="glyphicon glyphicon-paperclip" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
+                        <a href="~/Event/Edit/@item.Id">@item.Name</a>
+                        <a class="pull-right"><span class="glyphicon glyphicon-star" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
+                        <a class="pull-right"><span class="glyphicon glyphicon-cloud-download" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
+                        <a class="pull-right"><span class="glyphicon glyphicon-envelope" style="font-size:20px;padding:0 10px;cursor:pointer;"></span> </a>
+                        <a href="~/SiteManagement/Index/@item.Id" class="pull-right"><span class="glyphicon glyphicon-tasks" style="font-size:20px;padding:0 10px;cursor:pointer;"></span></a>
+                    </li>
+                }
+            }
+        </ul>
+
+    </div>
+
+    @Html.Partial("_FavoritePartial")
+</div>

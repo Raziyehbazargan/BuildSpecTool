@@ -4,10 +4,12 @@
     ViewBag.Title = "Create";
 }
 
-@using (Html.BeginForm("Create","Event")) 
+@using (Html.BeginForm("Save","Event")) 
 {
     @Html.AntiForgeryToken()
-    
+
+    @Html.HiddenFor(model => model.Event.Id)
+
     <div class="form-horizontal">
         <h4>Event</h4>
         <hr />
@@ -162,7 +164,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </div>
     </div>

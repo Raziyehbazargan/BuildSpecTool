@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BuildSpecTool.Models
 {
-    public class EventComponent
+    public class Component
     {
         public int Id { get; set; }
 
