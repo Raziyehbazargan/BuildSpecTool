@@ -14,17 +14,17 @@
                 <h3 class="panel-title">Dashboard</h3>
             </div>
             <div class="panel-body" id="mainSection">
-                 <div id="componentView">
+                 <div class="menu" id="componentView">
                      @Html.Partial("_SiteComponents", Model.Component)
                  </div>
-                <div id="attendeeTypeView">
-                   @* @Html.Partial("_AttendeeType", Model.AttendeeTypeViewModel)*@
+                <div class="menu" id="attendeeTypeView" style="display:none;">
+                    @Html.Partial("_AttendeeType", Model.EventAttendeeType)
                 </div>
-                <div id="statusView">
+                <div class="menu" id="statusView">
                 </div>
-                <div id="mailView">
+                <div class="menu" id="mailView">
                 </div>
-                <div id="regPageView">
+                <div class="menu" id="regPageView">
                 </div>
             </div>
         </div>
@@ -38,10 +38,35 @@
 @section scripts {
     <script type="text/javascript">
         $('.list-group-item').on('click', function () {
+            console.log(this.innerText);
+            switch (this.innerText) {
+                case "Components":
+                    $(".menu").hide();
+                    $("#componentView").show();
+                    break;
+                case "Attendee Types":
+                    $(".menu").hide();
+                    $("#attendeeTypeView").show();
+                    break;
+                case "Status":
+                    $(".menu").hide();
+                    $("#statusView").show();
+                    break;
+                case "Mails":
+                    $(".menu").hide();
+                    $("#mailView").show();
+                    break;
+                case "Registration Pages / Content Section":
+                    $(".menu").hide();
+                    $("#regPageView").show();
+                    break
+                default:
+                    $(".menu").hide();
+                    $("#componentView").show();
+                    break;
+            }
             $('.list-group-item').removeClass('active');
             $(this).addClass('active');
-
-
         });
     </script>
     }

@@ -274,7 +274,6 @@
     <Compile Include="Models\ReferenceModels\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\AttendeeTypeViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
     <Compile Include="ViewModels\ManagementViewModel.cs" />
   </ItemGroup>
