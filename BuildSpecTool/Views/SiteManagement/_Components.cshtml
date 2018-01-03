@@ -157,3 +157,20 @@
     </div>
 }
 
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var options = {
+                onText: "Yes",
+                onColor: 'success',
+                offColor: 'default',
+                offText: "No",
+                animate: true,
+            };
+            $("input[class='check-box']").bootstrapSwitch(options);
+        });
+
+    </script>
+}

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace BuildSpecTool.Controllers
 {
-
+    [Authorize]
     public class ComponentController : Controller
     {
         private ApplicationDbContext _context;
@@ -21,12 +22,16 @@ namespace BuildSpecTool.Controllers
         }
 
         // GET: Component
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Index(int id)
         {
-            return View();
+            var component = _context.EventComponent.Where(c => c.EventId == id).FirstOrDefault();
+            ViewBag.EventName = _context.Event.Where(e => e.Id == id).FirstOrDefault().Name;
+            return View(component?? new Component { EventId = id});
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Component details)
         {
             var components = _context.EventComponent.Where(c => c.EventId == details.EventId).FirstOrDefault();
@@ -41,8 +46,7 @@ namespace BuildSpecTool.Controllers
             }
 
             _context.SaveChanges();
-            return RedirectToAction("Index","SiteManagement", new { id = details.EventId });
-
+            return View("Index");
         }
     }
 }

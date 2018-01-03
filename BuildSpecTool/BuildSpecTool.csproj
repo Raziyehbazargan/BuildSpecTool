@@ -383,11 +383,11 @@
     <Content Include="Views\SiteManagement\_RegistrationFlow.cshtml" />
     <Content Include="Views\SiteManagement\_EventMail.cshtml" />
     <Content Include="Views\EventMail\Index.cshtml" />
+    <Content Include="Views\Component\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BasicInfo\" />
-    <Folder Include="Views\Component\" />
     <Folder Include="Views\EventAttendeeType\" />
     <Folder Include="Views\EventPage\" />
     <Folder Include="Views\EventStatus\" />
