@@ -24,6 +24,6 @@ namespace BuildSpecTool.Models
 
         public IEnumerable<Mail> MailList { get; set; }
 
-        public BuildSpecTool.Models.ReferenceModels.Mail Mail { get; set; }
+        public Mail Mail { get; set; }
     }
 }
