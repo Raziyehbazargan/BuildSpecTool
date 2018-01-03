@@ -194,6 +194,7 @@
     <Compile Include="Controllers\EventAttendeeTypeController.cs" />
     <Compile Include="Controllers\EventMailController.cs" />
     <Compile Include="Controllers\EventPageController.cs" />
+    <Compile Include="Controllers\EventStatusController.cs" />
     <Compile Include="Controllers\ReferenceControllers\AttendeTypeController.cs" />
     <Compile Include="Controllers\SiteManagementController.cs" />
     <Compile Include="Controllers\EventController.cs" />
@@ -389,6 +390,7 @@
     <Folder Include="Views\EventAttendeeType\" />
     <Folder Include="Views\EventMail\" />
     <Folder Include="Views\EventPage\" />
+    <Folder Include="Views\EventStatus\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
