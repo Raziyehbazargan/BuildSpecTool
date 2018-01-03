@@ -1,5 +1,5 @@
 ﻿
-
+@model BuildSpecTool.Models.EventAttendeeType
 <table class="table table-bordered table-responsive">
     <thead>
         <tr>
@@ -12,12 +12,11 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.EventAttendeeTypes)
+        @*@foreach (var item in Model)
         {
 
             <tr>
-                <td>@item.AttendeeType.Name</td>
-                <td>@item.Invited</td>
+                <td>@item</td>
                 <td>@item.HasRSVP</td>
                 <td>@item.Capacity</td>
                 <td>@item.Description</td>
@@ -26,7 +25,7 @@
                     <button>Edit</button>
                 </td>
             </tr>
-        }
+        }*@
     </tbody>
 </table>
 
