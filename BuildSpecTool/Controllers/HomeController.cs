@@ -9,6 +9,7 @@ using BuildSpecTool.ViewModels;
 
 namespace BuildSpecTool.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private ApplicationDbContext _context;
