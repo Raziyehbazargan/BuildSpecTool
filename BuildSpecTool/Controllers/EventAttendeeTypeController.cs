@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace BuildSpecTool.Controllers
 {
@@ -20,11 +21,28 @@ namespace BuildSpecTool.Controllers
             _context.Dispose();
         }
 
-        public ActionResult Save(EventAttendeeType details)
+        [HttpGet]
+        public ActionResult Index(int id)
         {
-            _context.AttendeeType.Add(details);
+            AttendeeTypeViewModel viewModel = new AttendeeTypeViewModel
+            {
+                RefAttendeeTypes = _context.Ref_AttendeeType.ToList(),
+                EventAttendeeTypes = _context.AttendeeType.Where(c => c.EventId == id).Include(e => e.AttendeeType).ToList(),
+                EventAttendeeType = new EventAttendeeType
+                {
+                    EventId = id
+                }
+            };
+               
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(AttendeeTypeViewModel details)
+        {
+            _context.AttendeeType.Add(details.EventAttendeeType);
             _context.SaveChanges();
-            return RedirectToAction("Index", "SiteManagement", new { id = details.EventId });
+            return View("Index");
         }
     }
 }

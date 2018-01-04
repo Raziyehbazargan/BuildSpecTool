@@ -1,16 +1,15 @@
 ﻿
 @model BuildSpecTool.ViewModels.ManagementViewModel
 
-@{
-    ViewBag.Title = "Index";
-}
+@Html.Partial("~/Views/Shared/_BreadcrumbNav.cshtml")
 
-<div class="row" style="margin-top:10%">
-    <div class="col-sm-4 col-md-4 ">
+<hr style="border-width:1.5px;"/>
+<div class="row" style="margin-top:3%">
+    <div class="col-sm-4 col-md-4">
        <a href="~/Component/Index/@Model.Component.EventId" class="">
-           <div class="panel panel-default">
+           <div class="panel panel-default" style="background-color:#0078b2;color:#fff">
                <div class="panel-body text-center">
-                   <span style="font-size:30px;" class="glyphicon glyphicon-cog"></span>
+                   <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
                    <p>Component</p>
                </div>
            </div>
@@ -18,25 +17,25 @@
     </div>
 
     <div class="col-sm-4 col-md-4 ">
-       <a>
-           <div class="panel panel-default">
-               <div class="panel-body text-center">
-                   <span style="font-size:30px;" class="glyphicon glyphicon-user"></span>
-                   <p>Attendee Type</p>
-               </div>
-           </div>
-       </a>
+        <a href="~/EventAttendeeType/Index/@Model.EventAttendeeType.EventId" class="">
+            <div class="panel panel-default" style="background-color:#90a681;color:#fff">
+                <div class="panel-body text-center">
+                    <span style="font-size:50px;" class="glyphicon glyphicon-user"></span>
+                    <p>Attendee Type</p>
+                </div>
+            </div>
+        </a>
     </div>
 
     <div class="col-sm-4 col-md-4 ">
-       <a>
-           <div class="panel panel-default">
-               <div class="panel-body text-center">
-                   <span style="font-size:30px;" class="glyphicon glyphicon-cog"></span>
-                   <p>Status</p>
-               </div>
-           </div>
-       </a>
+        <a href="~/EventStatus/Index/@Model.EventStatus.EventId" class="">
+            <div class="panel panel-default">
+                <div class="panel-body text-center" style="background-color:#f77524;color:#fff">
+                    <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
+                    <p>Status</p>
+                </div>
+            </div>
+        </a>
     </div>
 </div>
 
@@ -44,8 +43,8 @@
     <div class="col-sm-4 col-md-4 ">
         <a>
             <div class="panel panel-default">
-                <div class="panel-body text-center">
-                    <span style="font-size:30px;" class="glyphicon glyphicon-cog"></span>
+                <div class="panel-body text-center"  style="background-color:#39818E;color:#fff">
+                    <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
                     <p>Page</p>
                 </div>
             </div>
@@ -55,8 +54,8 @@
     <div class="col-sm-4 col-md-4 ">
        <a>
            <div class="panel panel-default">
-               <div class="panel-body text-center">
-                   <span style="font-size:30px;" class="glyphicon glyphicon-cog"></span>
+               <div class="panel-body text-center"  style="background-color:#b93546;color:#fff">
+                   <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
                    <p>Mail</p>
                </div>
            </div>
@@ -66,8 +65,8 @@
     <div class="col-sm-4 col-md-4 ">
         <a>
             <div class="panel panel-default">
-                <div class="panel-body text-center">
-                    <span style="font-size:30px;" class="glyphicon glyphicon-cog"></span>
+                <div class="panel-body text-center"  style="background-color:#39818E;color:#fff">
+                    <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
                     <p>Registration Flow</p>
                 </div>
             </div>
@@ -76,21 +75,21 @@
 </div>
 <div class="row">
     <div class="col-sm-4 col-md-4 ">
-      <a>
-          <div class="panel panel-default">
-              <div class="panel-body text-center">
-                  <span style="font-size:30px;" class="glyphicon glyphicon-cog"></span>
-                  <p>Time line</p>
-              </div>
-          </div>
-      </a>
+        <a href="~/Event/Timeline/@Model.Event.Id" class="">
+            <div class="panel panel-default"  style="background-color:#f77524;color:#fff">
+                <div class="panel-body text-center">
+                    <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
+                    <p>Time line</p>
+                </div>
+            </div>
+        </a>
     </div>
 
     <div class="col-sm-4 col-md-4 ">
        <a>
            <div class="panel panel-default">
-               <div class="panel-body text-center">
-                   <span style="font-size:30px;" class="glyphicon glyphicon-cog"></span>
+               <div class="panel-body text-center"  style="background-color:#90a681;color:#fff">
+                   <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
                    <p>Registration Filteration</p>
                </div>
            </div>
@@ -100,8 +99,8 @@
     <div class="col-sm-4 col-md-4 ">
         <a>
             <div class="panel panel-default">
-                <div class="panel-body text-center">
-                    <span style="font-size:30px;" class="glyphicon glyphicon-cog"></span>
+                <div class="panel-body text-center"  style="background-color:#0078b2;color:#fff">
+                    <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
                     <p>Styling and Formatting Specifications</p>
                 </div>
             </div>

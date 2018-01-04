@@ -44,6 +44,13 @@ namespace BuildSpecTool.Controllers
             return View("EventForm", viewModel);
         }
 
+        [HttpGet]
+        public ActionResult Timeline(int id)
+        {
+            var currentEvent = _context.Event.Where(e => e.Id == id).FirstOrDefault();
+            return View(currentEvent);
+        }
+
         [HttpPost]
         public ActionResult Save(EventViewModel details)
         {

@@ -32,13 +32,11 @@ namespace BuildSpecTool.Controllers
                 },
                 EventAttendeeType = new EventAttendeeType
                 {
-                    EventId = id,
-                    AttendeeTypes = _context.Ref_AttendeeType.ToList()
+                    EventId = id
                 },
                 EventStatus = new Models.ReferenceModels.EventStatus
                 {
-                    EventId = id,
-                    StatusList = _context.Ref_Status.ToList()
+                    EventId = id
                 },
                 EventPage = new EventPage
                 {
@@ -50,6 +48,10 @@ namespace BuildSpecTool.Controllers
                 {
                     EventId = id,
                     MailList = _context.Ref_Mail.ToList()
+                },
+                Event = new Event
+                {
+                    Id = id
                 }
             };
 

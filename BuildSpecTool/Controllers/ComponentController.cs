@@ -34,6 +34,12 @@ namespace BuildSpecTool.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Component details)
         {
+            if (!ModelState.IsValid)
+            {
+                var error = ModelState.Where(e => e.Value.Errors.Count > 0).ToArray();
+                return View("Index");
+            }
+
             var components = _context.EventComponent.Where(c => c.EventId == details.EventId).FirstOrDefault();
 
             if (components == null)

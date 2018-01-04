@@ -8,11 +8,17 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.EventId)
         <div class="row">
-            <div class="panel panel-default">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" style="padding:15px;">
+                    <li class="breadcrumb-item" aria-current="Site Management">@Html.ActionLink("Site Management", "Index", "SiteManagement", new { id = Model.EventId }, null)</li>
+                    <li class="breadcrumb-item active" aria-current="Site Management">@Html.ActionLink("Component", "Index", "Component")</li>
+                </ol>
+            </nav>
+            <hr />
+            <div class="panel panel-primary">
                 <!-- Default panel contents -->
                 <div class="panel-heading">
                     <p>Site Components</p>
-                    <p>Event: @ViewBag.EventName</p>
                 </div>
                 <div class="panel-body">
 
