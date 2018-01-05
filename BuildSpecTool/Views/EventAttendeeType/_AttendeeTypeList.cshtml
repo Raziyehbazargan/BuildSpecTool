@@ -1,0 +1,26 @@
+﻿
+@model IEnumerable<BuildSpecTool.Models.EventAttendeeType>
+
+<!-- List group -->
+<p>Attendee Type(s)</p>
+<hr/>
+<div class="list-group">
+    @if (Model.Any())
+     {
+        foreach (var item in Model)
+        {
+            <a class="list-group-item list-group-item-action">@item.AttendeeType.Name 
+              <span class="glyphicon glyphicon-remove pull-right" style="font-size:15px;padding:0 5px;cursor:pointer;color:red;"></span>
+              <span class="glyphicon glyphicon-edit pull-right" style="font-size:15px;cursor:pointer;color:green;"></span>
+            </a>
+        }
+    }
+    else
+    {
+        <a class="list-group-item list-group-item-action">No attendee Type added.</a>
+    }
+
+</div>
+
+
+

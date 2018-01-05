@@ -1,31 +1,70 @@
-﻿@using BuildSpecTool.Models
+﻿@model BuildSpecTool.ViewModels.EventMailViewModel
 
-@model IEnumerable<EventMail>
-@{
-    ViewBag.Title = "Index";
+@using (Html.BeginForm("Save", "EventMail"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>EventMail</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.EventMail.EventId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RefMails, "Mail", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EventMail.MailId, new SelectList(Model.RefMails, "Id", "Name"), "", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EventMail.MailId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventMail.IsBlast, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.EventMail.IsBlast)
+                    @Html.ValidationMessageFor(model => model.EventMail.IsBlast, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventMail.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EventMail.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EventMail.Subject, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventMail.Body, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.EventMail.Body, new { @class = "form-control", rows = 25 })
+                @Html.ValidationMessageFor(model => model.EventMail.Body, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
 }
 
-@{
-   <div class="row">
-       <ul class="nav nav-tabs">
-           <li class="active"><a href="#"><span class="glyphicon glyphicon-envelope"></span> All Mails</a></li>
-           <li class=""><a href="#"><span class="glyphicon glyphicon-send"></span> Transactional Mails</a></li>
-           <li><a href="#"><span class="glyphicon glyphicon-share-alt"></span> Mail Blast</a></li>
-       </ul>
-       <div class="list-group" id="mailList">
-           @if (Model.Any())
-           {
-               foreach (var mail in Model)
-               {
-                   <a href="#" class="list-group-item"><span class="@(mail.IsBlast ? "glyphicon glyphicon-send" : "glyphicon glyphicon-share-alt")"></span> @mail.Mail.Name</a>
-               }
-           }
-           else
-           {
-               <a href="#" class="list-group-item">No Mail Defined for this event yet.</a>
-           }
-       </div>
-   </div>
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var options = {
+                onText: "Yes",
+                onColor: 'success',
+                offColor: 'default',
+                offText: "No",
+                animate: true,
+                size: 'small'
+            };
+            $("input[class='check-box']").bootstrapSwitch(options);
+        });
 
+    </script>
 }
-

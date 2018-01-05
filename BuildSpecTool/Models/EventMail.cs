@@ -12,6 +12,8 @@ namespace BuildSpecTool.Models
 
         public byte MailId { get; set; }
 
+        public Mail Mail { get; set; }
+
         public int EventId { get; set; }
 
         public Event Event { get; set; }
@@ -21,9 +23,5 @@ namespace BuildSpecTool.Models
         public string Subject { get; set; }
 
         public string Body { get; set; }
-
-        public IEnumerable<Mail> MailList { get; set; }
-
-        public Mail Mail { get; set; }
     }
 }

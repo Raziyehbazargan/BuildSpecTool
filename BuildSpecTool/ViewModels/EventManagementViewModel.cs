@@ -7,8 +7,9 @@ using System.Web;
 
 namespace BuildSpecTool.ViewModels
 {
-    public class ManagementViewModel
+    public class EventManagementViewModel
     {
+        public Event Event { get; set; }
         public Component Component { get; set; }
 
         public EventAttendeeType EventAttendeeType { get; set; }
@@ -19,13 +20,14 @@ namespace BuildSpecTool.ViewModels
 
         public EventMail EventMail { get; set; }
 
-        public ManagementViewModel()
+        public EventManagementViewModel(int id)
         {
-            Component = new Component();
-            EventAttendeeType = new EventAttendeeType();
-            EventStatus = new EventStatus();
-            EventPage = new EventPage();
-            EventMail = new EventMail();
+            Component = new Component { EventId = id};
+            EventAttendeeType = new EventAttendeeType { EventId = id };
+            EventStatus = new EventStatus { EventId = id };
+            EventPage = new EventPage { EventId = id };
+            EventMail = new EventMail { EventId = id };
+            Event = new Event { Id = id };
         }
     }
 }

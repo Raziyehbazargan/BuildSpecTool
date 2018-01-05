@@ -13,7 +13,7 @@ namespace BuildSpecTool.Models
 
         public byte AttendeeTypeId { get; set; } //foreign key
 
-        public IEnumerable<AttendeeType> AttendeeTypes { get; set; }
+        public AttendeeType AttendeeType { get; set; }
 
         public bool Invited { get; set; }
 

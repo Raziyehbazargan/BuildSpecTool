@@ -13,7 +13,7 @@ namespace BuildSpecTool.Models.ReferenceModels
 
         public byte StatusId { get; set; } //foreign key
 
-        public IEnumerable<Status> StatusList { get; set; }
+        public Status Status { get; set; }
 
         public bool UsedInEvent { get; set; }
 
