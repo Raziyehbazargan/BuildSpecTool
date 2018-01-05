@@ -196,7 +196,7 @@
     <Compile Include="Controllers\EventPageController.cs" />
     <Compile Include="Controllers\EventStatusController.cs" />
     <Compile Include="Controllers\ReferenceControllers\AttendeTypeController.cs" />
-    <Compile Include="Controllers\SiteManagementController.cs" />
+    <Compile Include="Controllers\EventManagementController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\ReferenceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -301,8 +301,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AttendeeTypeViewModel.cs" />
+    <Compile Include="ViewModels\EventMailViewModel.cs" />
     <Compile Include="ViewModels\EventViewModel.cs" />
-    <Compile Include="ViewModels\ManagementViewModel.cs" />
+    <Compile Include="ViewModels\EventManagementViewModel.cs" />
     <Compile Include="ViewModels\StatusViewModel.cs" />
     <Compile Include="Views\StatusController.cs" />
   </ItemGroup>
@@ -368,30 +369,27 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Reference\AttendeeType.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
     <Content Include="Views\Event\EventForm.cshtml" />
     <Content Include="Views\Home\_AbstractPartial.cshtml" />
     <Content Include="Views\Home\_FavoritePartial.cshtml" />
     <Content Include="Views\Home\_SearchbarPartial.cshtml" />
-    <Content Include="Views\SiteManagement\Index.cshtml" />
-    <Content Include="Views\SiteManagement\_MenuPartial.cshtml" />
+    <Content Include="Views\EventManagement\Index.cshtml" />
+    <Content Include="Views\EventManagement\_MenuPartial.cshtml" />
     <Content Include="Views\EventAttendeeType\_AttendeeTypeList.cshtml" />
-    <Content Include="Views\SiteManagement\_Status.cshtml" />
-    <Content Include="Views\SiteManagement\_EventPage.cshtml" />
-    <Content Include="Views\SiteManagement\_EventMail.cshtml" />
-    <Content Include="Views\EventMail\Index.cshtml" />
+    <Content Include="Views\EventManagement\_EventPage.cshtml" />
+    <Content Include="Views\EventMail\MailBox.cshtml" />
     <Content Include="Views\Component\Index.cshtml" />
     <Content Include="Views\EventAttendeeType\Index.cshtml" />
     <Content Include="Views\Event\Timeline.cshtml" />
     <Content Include="Views\Shared\_BreadcrumbNav.cshtml" />
     <Content Include="Views\EventStatus\Index.cshtml" />
     <Content Include="Views\EventPage\Index.cshtml" />
+    <Content Include="Views\EventMail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\BasicInfo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

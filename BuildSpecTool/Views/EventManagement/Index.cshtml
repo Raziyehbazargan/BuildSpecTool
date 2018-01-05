@@ -1,5 +1,5 @@
 ﻿
-@model BuildSpecTool.ViewModels.ManagementViewModel
+@model BuildSpecTool.ViewModels.EventManagementViewModel
 
 @Html.Partial("~/Views/Shared/_BreadcrumbNav.cshtml")
 
@@ -16,8 +16,8 @@
        </a>
     </div>
 
-    <div class="col-sm-4 col-md-4 ">
-        <a href="~/EventAttendeeType/Index/@Model.EventAttendeeType.EventId" class="">
+    <div class="col-sm-4 col-md-4">
+        <a href="@Url.Action("Index", "EventAttendeeType", new { id = Model.EventAttendeeType.EventId }, null)" class="">
             <div class="panel panel-default" style="background-color:#90a681;color:#fff">
                 <div class="panel-body text-center">
                     <span style="font-size:50px;" class="glyphicon glyphicon-user"></span>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="col-sm-4 col-md-4 ">
-        <a href="~/EventStatus/Index/@Model.EventStatus.EventId" class="">
+        <a href="@Url.Action("Index", "EventStatus", new { id = Model.EventStatus.EventId }, null)" class="">
             <div class="panel panel-default">
                 <div class="panel-body text-center" style="background-color:#f77524;color:#fff">
                     <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
@@ -41,9 +41,9 @@
 
 <div class="row">
     <div class="col-sm-4 col-md-4 ">
-        <a>
+        <a href="@Url.Action("Index", "EventPage", new { id = Model.EventPage.EventId }, null)" class="">
             <div class="panel panel-default">
-                <div class="panel-body text-center"  style="background-color:#39818E;color:#fff">
+                <div class="panel-body text-center" style="background-color:#39818E;color:#fff">
                     <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
                     <p>Page</p>
                 </div>
@@ -52,20 +52,20 @@
     </div>
 
     <div class="col-sm-4 col-md-4 ">
-       <a>
-           <div class="panel panel-default">
-               <div class="panel-body text-center"  style="background-color:#b93546;color:#fff">
-                   <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
-                   <p>Mail</p>
-               </div>
-           </div>
-       </a>
+        <a href="@Url.Action("Index", "EventMail", new { id = Model.EventMail.EventId }, null)" class="">
+            <div class="panel panel-default">
+                <div class="panel-body text-center" style="background-color:#b93546;color:#fff">
+                    <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
+                    <p>Mail</p>
+                </div>
+            </div>
+        </a>
     </div>
 
     <div class="col-sm-4 col-md-4 ">
-        <a>
+        <a href="">
             <div class="panel panel-default">
-                <div class="panel-body text-center"  style="background-color:#39818E;color:#fff">
+                <div class="panel-body text-center" style="background-color:#39818E;color:#fff">
                     <span style="font-size:50px;" class="glyphicon glyphicon-cog"></span>
                     <p>Registration Flow</p>
                 </div>

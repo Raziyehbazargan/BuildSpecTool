@@ -64,7 +64,7 @@
                 </div>
                 <div class="panel-footer text-right">
                     <div class="btn-group" role="group" aria-label="Save and Back Buttons">
-                        <a class="btn btn-default" href="~/SiteManagement/Index/@Model.EventStatus.EventId">Back</a>
+                        <a class="btn btn-default" href="@Url.Action("Index","EventManagement", new { id = Model.EventStatus.EventId }, null)">Back</a>
                         <button type="submit" class="btn btn-primary">@(Model.EventStatus.Id == 0 ? "Submit" : "Update")</button>
                     </div>
                 </div>

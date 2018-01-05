@@ -10,8 +10,8 @@ namespace BuildSpecTool.Models
     {
         public byte Id { get; set; }
         public byte SitePageId { get; set; }
+        public SitePage SitePage { get; set; }
         public int EventId { get; set; }
-        public IEnumerable<SitePage> SitePageList { get; set; }
         public bool IsInNav { get; set; }
         public string Description { get; set; }
     }
